@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+:root {
+    /* Colors */
+    --bg-color: linear-gradient(32deg,rgba(160, 50, 219, 1) 0%, rgba(148, 187, 233, 1) 75%);
+    --app-bg-color: white;
+
+    --input-bg-color: rgba(223, 196, 196, 0.451);
+    --add-bg-color: #fd5959;
+    --add-bg-hover: #ff3c3c;
+
+    /* fonts color */
+    --header-text-color: #00204a;
+
+    /* Typography */
+    --font-sans: system-ui, sans-serif;
+    --font-itim : "Itim", cursive;
+
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.25rem;
+    --text-xl: 1.5rem;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+
+    /* Layout */
+    --max-width: 430px;
+    }
+
+/* ============================================================
+   UNIVERSAL RESET
+============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-color);
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===========================================================
+   APP CONTAINER
+   ===========================================================*/
+
+.app-container {
+    width: 100%;
+    max-width: var(--max-width);
+    background-color: var(--app-bg-color);
+    border-radius: 15px;
+    padding: 2rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header-text {
+    color: var(--header-text-color);
+    font-size: clamp(1.25rem, 10vw, 2.5rem);
+}
+
+/* ===========================================================
+   WRAPPER
+   ===========================================================*/
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* ===========================================================
+   FORM / INPUT CONTAINER
+   ===========================================================*/
+
+.input-container {
+    position: relative;
+    display: flex;
+}
+
+.listText {
+    background-color: var(--input-bg-color);
+    border-radius: 25px;
+    padding: 15px 150px 15px 10px;
+    z-index: 1;
+}
+
+.add-btn {
+    position: absolute;
+    color: white;
+    background-color: var(--add-bg-color);
+    border-radius: 25px;
+    z-index: 10;
+    padding: 15px 40px;
+    right: 10px;
+}
+
+.add-btn:hover {
+    background-color: var(--add-bg-hover);
+}
+
+/* ===========================================================
+   LIST CONTAINER
+   ===========================================================*/
+
+.list-container {
+    width: 100%;
+    display: flex;
+
+}
+
+.todo-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.list {
+    width: 100%;
+    list-style: none;
+}
+
+.box-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.307);
+    position: static;
+    margin-right: 1rem;
+}
+
+.checkbox.complete {
+    background-color: #ff3c3c;
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.307);
+}
+
+.list-text {
+    font-family: var(--font-itim);
+    font-size: clamp(1rem, 10vw, 1.5rem);
+}
+
+.list-text.complete{
+    text-decoration: line-through;
+    opacity: 50%;
+}
+
+.deleteBtn-container {
+    position: absolute;
+    right: 10px;
+}
+
+.delete-btn {
+    background: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.45rem;
+}
+
